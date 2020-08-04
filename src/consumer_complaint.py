@@ -42,12 +42,11 @@ with open('input/complaints.csv', mode='r') as f:
         except:
                print('could not parese the date')
 
-#sorting of Product dictionary with Keys(product name)
-#for product in sorted(result.keys()):
-    #print('product '+product)
+
 
 #writing a report.csv
 with open('output/report.csv', mode='w') as f:
+    #Sorted result dictionary with Keys
     for x in sorted(result.keys()):
         #check if product name contain comma 
         space= "," in x 
@@ -58,7 +57,7 @@ with open('output/report.csv', mode='w') as f:
         else:
             
              productName= x
-        #print('--------------------')
+        
         for m in sorted(result[x].keys()):
             #writing product name in LOWER CASE
             f.write(productName.lower())
