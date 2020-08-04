@@ -8,8 +8,7 @@ with open('input/complaints.csv', mode='r') as f:
     #checking each row and extracting product and date 
     for data in file:        
         product = data['Product']
-        date=data['Date received']
-         
+        date=data['Date received']         
         #IF Data is missing- it will be handeled by try except block
         try:
             #Extracting year from date
@@ -41,9 +40,6 @@ with open('input/complaints.csv', mode='r') as f:
                             print('not a valid date')
         except:
                print('could not parese the date')
-
-
-
 #writing a report.csv
 with open('output/report.csv', mode='w') as f:
     #Sorted result dictionary with Keys
@@ -54,10 +50,9 @@ with open('output/report.csv', mode='w') as f:
         if space: 
             #Product name contains comma so put it in double quotes         
             productName='\"' + x + '\"'
-        else:
-            
+        else:            
              productName= x
-        
+                     
         for m in sorted(result[x].keys()):
             #writing product name in LOWER CASE
             f.write(productName.lower())
