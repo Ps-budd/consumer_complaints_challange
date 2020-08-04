@@ -43,7 +43,7 @@ with open('input/complaints.csv', mode='r') as f:
                print('could not parese the date')
 
 #sorting of Product dictionary with Keys(product name)
-for product in sorted(result.keys()):
+#for product in sorted(result.keys()):
     #print('product '+product)
 
 #writing a report.csv
