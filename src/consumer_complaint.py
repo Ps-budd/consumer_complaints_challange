@@ -1,33 +1,37 @@
 import csv
 from datetime import datetime
-
+#Nexted dictionary of analysed report
 result = {};
+#reading of file-complaints.csv
 with open('input/complaints.csv', mode='r') as f:
     file = csv.DictReader(f)
-    for data in file:
-#         print(data['Product'])
+    #checking each row and extracting product and date 
+    for data in file:        
         product = data['Product']
         date=data['Date received']
-        #year= date[0:4]
-        #dt = datetime.strptime(date, '%Y-%m-%d')
-        #year=str(dt.year) 
-
+         
+        #IF Data is missing- it will be handeled by try except block
         try:
+            #Extracting year from date
                 dArr = date.split('-')
                 for year in dArr:
                     try:
+                            #checking year should be integer only
                             if len(year) == 4 and int(year):
                                 #print(year)
                                 company = data['Company']
+                                #If result dictionary is empty
                                 if result.get(product) == None:
                                     result[product] = {year : {'totalComplaints' : 1, 'companies':{company : 1}}}
                                 else:
+                                    #making pairs in dictionary with product, year & company count 
                                     if result[product].get(year) == None:
                                         result[product][year] = {'totalComplaints' : 1, 'companies':{company : 1}}
                                     else:
+                                        #counting total complaints
                                         totalComplaints = result[product][year]['totalComplaints']
                                         result[product][year]['totalComplaints'] = totalComplaints + 1
-
+                                        #compnies atleast having one complaint
                                         if  result[product][year]['companies'].get(company) != None:
                                             totalComplaintsPerCompany = result[product][year]['companies'][company] + 1
                                             result[product][year]['companies'][company] = totalComplaintsPerCompany
@@ -38,48 +42,39 @@ with open('input/complaints.csv', mode='r') as f:
         except:
                print('could not parese the date')
 
-# print(result)
-# sortedResult= sorted(result)
-# result={k: result[k] for k in sortedResult}
+#sorting of Product dictionary with Keys(product name)
 for product in sorted(result.keys()):
-    print('product '+product)
+    #print('product '+product)
 
+#writing a report.csv
 with open('output/report.csv', mode='w') as f:
     for x in sorted(result.keys()):
-        #print('Product : '+ x)
+        #check if product name contain comma 
         space= "," in x 
         productName=''
-        if space:
-           # print('"' + x + '"')
-            
+        if space: 
+            #Product name contains comma so put it in double quotes         
             productName='\"' + x + '\"'
         else:
-           # print('Product : '+ x)
             
              productName= x
         #print('--------------------')
         for m in sorted(result[x].keys()):
+            #writing product name in LOWER CASE
             f.write(productName.lower())
-            #print('Year : '+ m + ' totalComplaints : '+ str(result[x][m]['totalComplaints']))
-            # print('Year : '+ m + ' totalComplaints : '+ str(result[x][m]['totalComplaints']) + ' totalCompanies '+ str(len(result[x][m]['companies'])))
+            #writing year, number of complaints and compnies having complaints
             f.write(','+ m + ','+ str(result[x][m]['totalComplaints']) + ','+ str(len(result[x][m]['companies'])))
             highestComplaints = 0
             compnayNameofHighest = ''
+            #calculation of percentage of total complaints filed against one company 
             for company, total in result[x][m]['companies'].items():
                 if total > highestComplaints :
                     highestComplaints = total
                     compnayNameofHighest = company
-                # print(company + ' : ' + str(total))
-                # print('Highest complaints of :'+compnayNameofHighest + ' with total complaints '+ str(highestComplaints))
-                # print(result[x][m]['totalComplaints'])
-                # print((highestComplaints*100) / (result[x][m]['totalComplaints'] + 0.0))
+               
             percentage = round((highestComplaints*100) / (result[x][m]['totalComplaints'] + 0.0))
 
-            # print('percentage '+ str(int(percentage)))
             f.write(','+ str(int(percentage)))
             f.write('\n')
-            # print('--------------------')
+            
            
-        
-        
-    #print('________________')
