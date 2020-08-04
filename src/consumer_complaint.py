@@ -3,7 +3,7 @@ from datetime import datetime
 #Nexted dictionary of analysed report
 result = {};
 #reading of file-complaints.csv
-with open('../input/complaints.csv', mode='r') as f:
+with open('input/complaints.csv', mode='r') as f:
     file = csv.DictReader(f)
     #checking each row and extracting product and date 
     for data in file:        
@@ -41,7 +41,7 @@ with open('../input/complaints.csv', mode='r') as f:
         except:
                print('could not parese the date')
 #writing a report.csv
-with open('../output/report.csv', mode='w') as f:
+with open('output/report.csv', mode='w') as f:
     #Sorted result dictionary with Keys
     for x in sorted(result.keys()):
         #check if product name contain comma 
@@ -52,7 +52,7 @@ with open('../output/report.csv', mode='w') as f:
             productName='\"' + x + '\"'
         else:            
              productName= x
-
+                     
         for m in sorted(result[x].keys()):
             #writing product name in LOWER CASE
             f.write(productName.lower())
