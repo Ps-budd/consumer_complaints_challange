@@ -70,7 +70,7 @@ with open('output/report.csv', mode='w') as f:
                 if total > highestComplaints :
                     highestComplaints = total
                     compnayNameofHighest = company
-               
+            #Calculating percentage   
             percentage = round((highestComplaints*100) / (result[x][m]['totalComplaints'] + 0.0))
 
             f.write(','+ str(int(percentage)))
