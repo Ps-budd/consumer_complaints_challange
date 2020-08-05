@@ -174,7 +174,11 @@ consumer loan,2013,3117,159,12
    ```
    
 # Run Instructions
-I used python3 for solving this challenge and used only the I/O libraries. I have mentioned the different test cases which can be found inside insight_testsuite. you can move the each test cases in input file and check the output.
+I used python 3 for solving this challenge and used only the I/O libraries. I have mentioned the different test cases which can be found inside insight_testsuite. you can move the each test cases in input file and check the output.
+**Note-** I have to add  encoding='utf8' for python 3.7. You can see in below line
+with open('./output/complaints.csv', encoding='utf8', mode='r') as f:
+but when i checked my program at test my repo link provided by Insight team i had to remove encoding.
+
 
 # Contact
 Feel free to contact [me](https://www.linkedin.com/in/adityadubey09/) if you need anything Or You can email me at adubey6@hawk.iit.edu
