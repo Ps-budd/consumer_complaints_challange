@@ -22,13 +22,13 @@ for this soltuion they have provided `complaints.csv` which contain data of comp
 For example you can find the input snippet in the Test-cases tab.
 
 # Approach
-My steps to solve this problem is<br>
-  read file contents line by line<br>
-  understand schema from header<br>
-  clean data row if necessary<br>
-  insert required data into dictionary<br>
-  sort dictionary<br>
-  write data to output file<br>
+My steps to solve this problem is- <br>
+  read file contents line by line <br>
+  understand schema from header <br>
+  clean data row if necessary <br>
+  insert required data into dictionary <br>
+  sort dictionary <br>
+  write data to output file <br>
   
 ### Version 1:
   In the begning in order to solve problem i read the file and put data into dictionary data sctructure as it perfectly suit the prblem and less execution time of it. I was     creating different dictionary for different header.
@@ -171,8 +171,10 @@ checking or savings account,2020,6575,153,47
 consumer loan,2012,1986,84,19
 consumer loan,2013,3117,159,12
 
-
-
    ```
+   
+# Run Instructions
+I used python3 for solving this challenge and used only the I/O libraries. I have mentioned the different test cases which can be found inside insight_testsuite. you can move the each test cases in input file and check the output.
+
 # Contact
 Feel free to contact [me](https://www.linkedin.com/in/adityadubey09/) if you need anything Or You can email me at adubey6@hawk.iit.edu
