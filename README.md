@@ -13,6 +13,6 @@
   
   
 <h4>Solution Approach</h4>
-     <b> Python used<br>
-     <b> dictionary data structure<br>
+      Python used<br>
+      dictionary data structure<br>
   <p> Read the complaints.csv file and starts making pairs of Products with year and total number of complaints for this product and year pair with the use of nested Dictionary data structure. once your dictionary is ready you have Analysis ready of complaints.csv file according to problem statement. From the help of prepared dictionary, analysis is performed and write into the report.csv file. 
