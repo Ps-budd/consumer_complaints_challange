@@ -9,4 +9,10 @@
 
 
 <h4>Problem</h4>
-<P>For this challenge, we want to know for each <b>financial product and <b>year, the <b>total number of complaints, <b>number of companies receiving a complaint, and <b>the highest percentage of complaints directed at a single company.
+<P>For this challenge, we want to know for each financial product and year, the total number of complaints, number of companies receiving a complaint, and the highest percentage of complaints directed at a single company.
+  
+  
+<h4>Solution Approach</h4>
+     <b> Python used<br>
+     <b> dictionary data structure<br>
+  <p> Read the complaints.csv file and starts making pairs of Products with year and total number of complaints for this product and year pair with the use of nested Dictionary data structure. once your dictionary is ready you have Analysis ready of complaints.csv file according to problem statement. From the help of prepared dictionary, analysis is performed and write into the report.csv file. 
