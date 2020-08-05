@@ -20,7 +20,8 @@
 <h4>Algorithm</h4>
 step 1: Create result Dictionary<br>
 step 2: Open complaints.csv in read mode<br>
-step 3: check eacch row from complaints.csv and extract product & date<br>
+step 3: check each row from complaints.csv and extract product & date<br>
+      3.1 if row has missing value in any product, year or company. discard row and go back to step 2.
 step 4: extract year from date<br>
 step 5: if resul key is empty <br>
         5.1 put the product, year complaintcount=1 & compnies=1 in result<br>
@@ -33,3 +34,29 @@ step10: if product name contain comma put product name in double quotes<br>
 step 11:write product name(lowercase), year, total number of complaints, compnies having complaints <br>
 step 12: calculate percentage= round((highestComplaints*100) / totalComplaints) <br>
 step 13: put percentage into report.csv<br>
+
+<h4>OUTPUT</h4>
+
+<h7>Test Cases</h>
+<b>Test 1</b>
+      input- complaints.csv file with missing values of year <br>
+      output- missing value handled properlybr>
+      
+<b>Test 2</b>
+      input- complaints.csv file with missing values of compnies<br>
+      output- report file do not add the missing company in total compny count<br>
+      
+      
+ <b>Test 3</b>
+     input- complaints.csv file with missing values of product <br>
+      output- missing value handled properly<br>
+     
+
+<b>Test 4</b>
+      input- test case provided by insight_datascience team<br>
+      output- report.csv matchs the result to insight data science output.<br>
+      
+ <b>Test 5</b>
+      input- complaints.csv file(~900mb) provided by insight_datascience team<br>
+      output- report.csv matchs the result. <br>
+      **Note**- large dataset tested. Test 5-input doesn't contain complaints.csv file becasue git hub do not allow file exceed 100mb.<br>
