@@ -36,7 +36,7 @@ step 12: calculate percentage= round((highestComplaints*100) / totalComplaints) 
 step 13: put percentage into report.csv<br>
 
 <h4>OUTPUT</h4>
-
+**Note**- output is sorted product wise and year wise<br>
 <h7>Test Cases</h>
 <b>Test 1</b>
       input- complaints.csv file with missing values of year <br>
