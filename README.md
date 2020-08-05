@@ -40,7 +40,7 @@ step 13: put percentage into report.csv<br>
 <h7>Test Cases</h>
 <b>Test 1</b>
       input- complaints.csv file with missing values of year <br>
-      output- missing value handled properlybr>
+      output- missing value handled properly<br>
       
 <b>Test 2</b>
       input- complaints.csv file with missing values of compnies<br>
@@ -49,7 +49,7 @@ step 13: put percentage into report.csv<br>
       
  <b>Test 3</b>
      input- complaints.csv file with missing values of product <br>
-      output- missing value handled properly<br>
+      output- missing value handled properly and calculation of percentage of total complaints filed against one company  is correct<br>
      
 
 <b>Test 4</b>
