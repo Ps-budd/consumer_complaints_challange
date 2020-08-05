@@ -1,5 +1,5 @@
 
 
     #!/bin/sh
-    python3 ./src/consumer_complaint.py
+    python3.7 ./src/consumer_complaint.py
 
