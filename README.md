@@ -1,23 +1,50 @@
-# <h1>consumer_complaints_challange</h1>
+# consumer_complaints_challange
 
-<h2>Table of content</h2> <br>
+# Table of contents
 
-<b>1. Problem statement</b><br>
-<b>2. Solution appraoch</b><br>
-<b>3. Algorithm</b><br>
-<b>4. Test cases</b><br>
+1. [Problem](README.md#Problem)
+2. [Input](README.md#Input)
+3. [Approach](README.md#Approach)
+4. [Output](README.md#Output)
+5. [Test-cases](README.md#Test-cases)
+5. [Run Instructions](README.md#Run-Instructions)
+6. [Tests](README.md#Tests)
+7. [Contact](README.md#Contact)
 
 
-<h4>Problem</h4>
-<P>For this challenge, we want to know for each financial product and year, the total number of complaints, number of companies receiving a complaint, and the highest percentage of complaints directed at a single company.
+# Problem
+The federal government provides a way for consumers to file complaints against companies regarding different financial products, such as payment problems with a credit card or debt collection tactics.
+
+As a data engineer, you are asked to create a mechanism to analyze past years data, specificially calculate : **number of complaints** , **number of companies receiving a complaint** and **highest percentage of complaints directed at a single companyfor** **each financial product & year **.
   
-  
-<h4>Solution Approach</h4>
-      Python used<br>
-      dictionary data structure<br>
-  <p> Read the complaints.csv file and starts making pairs of Products with year and total number of complaints for this product and year pair with the use of nested Dictionary data structure. once your dictionary is ready you have Analysis ready of complaints.csv file according to problem statement. From the help of prepared dictionary, analysis is performed and write into the report.csv file. 
+# Input 
+Raw data could be found [here](https://github.com/insightdatascience/consumer_complaints) under the __Input Dataset__ tab
+for this soltuion they have provided `complaints.csv` which contain data of complaints for different product.
+For example you can find the input snippet in the Test-cases tab.
 
-<h4>Algorithm</h4>
+# Approach
+My steps to solve this problem is,
+  read file contents line by line
+  understand schema from header
+  clean data row if necessary
+  insert required data into dictionary
+  sort dictionary
+  write data to output file
+  
+### Version 1:
+  In the begning in order to solve problem i read the file and put data into dictionary data sctructure as it perfectly suit the prblem and less execution time of it. I was     creating different dictionary for different header.
+  
+But later on I realised the data is very large, not clean and data parsing fails for some rows. so i cleaned the data before adding to dictionary.
+
+### Version 2:
+ Since data is large so i came up with new solution by making Nested Dictionary (Dictionary of Dictionary), which is more suitable to the problem, and it makes more sense for the analysis I have to perform.
+ so I cleaned the data and then performed the parsing and inserted into dictionary.
+ used following-  
+      **Python 
+      dictionary data structure**
+ once `complaints.py` starts reading the data it starts making pairs of Products with year and total number of complaints for this product and year pair with the use of nested Dictionary data structure. once your dictionary is ready you have Analysed report.
+
+# Algorithm
 step 1: Create result Dictionary<br>
 step 2: Open complaints.csv in read mode<br>
 step 3: check each row from complaints.csv and extract product & date<br>
